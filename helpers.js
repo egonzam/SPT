@@ -15,12 +15,13 @@ const parseData = (fileName) => {
   const publishedDate = (book) => {
     if (book.publish_date !== null) {
       const verifiedDate = new Date(book.publish_date);
-      if (verifiedDate.getDay() === 0) {
-        return false;
+      if (!isNaN(verifiedDate) && verifiedDate.getDay() !== 0) {
+        return true;
       }
-      return true;
     }
+    return false;
   };
+  
   const filterAuthorsNames = ({ author } = {}) => {
     return !(
       !author ||
