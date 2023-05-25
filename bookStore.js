@@ -1,6 +1,6 @@
 const helpers = require("./helpers");
 
-function processBooksData(jsonFileName) {
+exports.processBooksData = function(jsonFileName) {
   const booksData = helpers.parseData(jsonFileName);
   const processedBooksData = booksData.filter((book) => {
     if (!helpers.publishedDate(book)) return false;
@@ -11,4 +11,3 @@ function processBooksData(jsonFileName) {
   const sortedByTitle = helpers.sortByTitle(roundedPrices);
   helpers.writeFile(sortedByTitle);
 }
-processBooksData("books");
