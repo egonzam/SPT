@@ -13,6 +13,7 @@ git clone https://github.com/egonzam/SPT.git
 
 Install dependencies:
 cd SPT
-npm install
+npm install json2csv
+npm install fs
 
 This will install the necessary dependencies required by the project.
